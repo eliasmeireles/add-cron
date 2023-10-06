@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  command-runner:
+    container_name: command-runner
+    image: command-runner
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./.out/:/build/
+    deploy:
+      resources:
+        limits:
+          memory: 512M

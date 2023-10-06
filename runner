@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -f "/build/addCron" ]; then
+  rm /build/addCron
+fi
+
+cp /app/addCron /build/addCron
+
+if [ -f "/build/addCron" ]; then
+    chmod u+x /app/addCron
+else
+    echo "Failed to build"
+    exit 1
+fi
+echo "Build generated successful"
+
+
+

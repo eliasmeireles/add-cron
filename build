@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker-compose up --build -d
+
+if sudo cp ./.out/addCron /usr/bin/addCron & then
+    echo "$(date '+%Y-%m-%d %H:%M:%S'): Build successful"
+else
+  echo "$(date '+%Y-%m-%d %H:%M:%S'): Build failed"
+fi
+
+docker-compose down
