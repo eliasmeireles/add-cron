@@ -16,5 +16,5 @@ fi
 
 docker-compose down
 
-cd CONTEXT 
+cd $CONTEXT
 
