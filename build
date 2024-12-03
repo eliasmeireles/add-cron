@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -e 
+
+CONTEXT=$(pwd)
+
+cd add-cron
+
 docker-compose up --build -d
 
 if sudo cp ./.out/addCron /usr/bin/addCron & then
@@ -9,3 +15,6 @@ else
 fi
 
 docker-compose down
+
+cd CONTEXT 
+
